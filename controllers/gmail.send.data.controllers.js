@@ -2,6 +2,7 @@ import nodemailer from 'nodemailer'
 import dotenv from 'dotenv'
 dotenv.config({path: './secret/.env'}) 
 
+// EL TRANPORTADOR DEL LOS DATOS DEL GMAIL CON LOS DATOS DEL CORREO 
 const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
@@ -12,8 +13,9 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-
+// FUNCION PARA ENVIAR EL MENSAJE A CORREO
 export const sendDataGmail = async(req , res)=>{
+    // EXTRAIGO LOS DATOS DEL REQUERIMIENTO
     const { name , lastName , email , message } = req.body
     
     try {

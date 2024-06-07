@@ -10,7 +10,6 @@ import { pool } from "../db.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-
 const diskstorage = multer.diskStorage({
     destination: path.join(__dirname,'../images'),
     filename: (req,file,cb) => {
@@ -21,7 +20,6 @@ const diskstorage = multer.diskStorage({
 export const fileUpload = multer({
     storage: diskstorage
 }).single('image')
-
 
 
 // FUNCION PARA CREAR UNA IMG DEL CARRUSEL
